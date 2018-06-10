@@ -6,7 +6,7 @@ import (
 
 type UniformChoice struct {
 	Choices []base.Value
-	Unit    pure.Interface
+	Unit    Interface
 }
 
 func (UniformChoice) Name() base.Operator {

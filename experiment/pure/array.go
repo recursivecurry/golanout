@@ -7,7 +7,7 @@ type Array struct {
 }
 
 func (a Array) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	var values = make([]base.Value, len(a.Values))
+	var values = make([]base.Value, 0, len(a.Values))
 	for _, v := range a.Values {
 		value, err := v.Value(inputs, params, salt)
 		if err != nil {
