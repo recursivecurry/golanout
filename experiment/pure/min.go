@@ -1,12 +1,11 @@
 package pure
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
 	"errors"
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 type Min struct {
-
 	values []Interface
 }
 

@@ -22,12 +22,12 @@ var TestLiteralRunTable = []base.Value{
 
 func TestLiteral_Run(t *testing.T) {
 	for _, test := range TestLiteralRunTable {
-		literal := Literal{ test }
+		literal := Literal{test}
 		actual, err := literal.Value(nil, nil, "")
 		if err != nil {
 			t.Error(err)
 		}
-		if test!= actual {
+		if test != actual {
 			t.Error(test, actual)
 		}
 	}
