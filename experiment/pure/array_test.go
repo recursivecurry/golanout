@@ -1,8 +1,8 @@
 package pure
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 
 	"github.com/recursivecurry/golanout/experiment/base"
 )
@@ -27,7 +27,7 @@ var TestArrayRunTable = []struct {
 
 func TestArray_Run(t *testing.T) {
 	for _, test := range TestArrayRunTable {
-		array := Array{ test.values }
+		array := Array{test.values}
 		actual, err := array.Value(nil, nil, "")
 		if err != nil {
 			t.Error(err)

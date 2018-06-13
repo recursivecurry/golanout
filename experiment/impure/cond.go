@@ -28,5 +28,5 @@ func (c Cond) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.
 }
 
 func (Cond) Name() base.Operator {
-	return "seq"
+	return "cond"
 }

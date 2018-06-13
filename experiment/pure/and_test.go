@@ -23,7 +23,7 @@ var TestAndRunTable = []struct {
 
 func TestAnd_Run(t *testing.T) {
 	for _, test := range TestAndRunTable {
-		and := And{ [2]Interface{Literal{test.left}, Literal{test.right}} }
+		and := And{[2]Interface{Literal{test.left}, Literal{test.right}}}
 		actual, err := and.Value(nil, nil, "")
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {
 			t.Fail()
