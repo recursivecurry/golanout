@@ -12,7 +12,7 @@ type Interface interface {
 	Value(base.Inputs, base.Params, base.Salt) (base.Value, error)
 }
 
-// GetBool make a bool value from a pure.Interface value.
+// GetBool return a bool value from a pure.Interface value.
 func GetBool(value Interface, inputs base.Inputs, params base.Params, salt base.Salt) (bool, error) {
 	v, err := value.Value(inputs, params, salt)
 	if err != nil {
@@ -28,7 +28,7 @@ func GetBool(value Interface, inputs base.Inputs, params base.Params, salt base.
 	}
 }
 
-// GetBool make a number value from a pure.Interface value.
+// GetNumber return a number value from a pure.Interface value.
 func GetNumber(value Interface, inputs base.Inputs, params base.Params, salt base.Salt) (float64, error) {
 	v, err := value.Value(inputs, params, salt)
 	if err != nil {
