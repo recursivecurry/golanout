@@ -9,7 +9,7 @@ type Min struct {
 	values []Interface
 }
 
-func (m Min) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (m Min) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
 
 	if len(m.values) == 0 {
 		return nil, errors.New("no values")

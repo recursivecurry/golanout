@@ -9,7 +9,7 @@ type Max struct {
 	values []Interface
 }
 
-func (m Max) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (m Max) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
 
 	if len(m.values) == 0 {
 		return nil, errors.New("no values")
