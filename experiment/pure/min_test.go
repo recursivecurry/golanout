@@ -1,8 +1,8 @@
 package pure
 
 import (
-	"testing"
 	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
 )
 
 func TestMin_Name(t *testing.T) {
@@ -13,12 +13,12 @@ func TestMin_Name(t *testing.T) {
 	}
 }
 
-var TestMinRunTable = []struct{
-	values []Interface
+var TestMinRunTable = []struct {
+	values   []Interface
 	expected base.Value
 }{
 	{
-		values: []Interface{Literal{10.0}, Literal{5.0}, Literal{20.0}},
+		values:   []Interface{Literal{10.0}, Literal{5.0}, Literal{20.0}},
 		expected: 5.0,
 	},
 }

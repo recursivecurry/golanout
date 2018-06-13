@@ -14,12 +14,12 @@ func TestMax_Name(t *testing.T) {
 	}
 }
 
-var TestMaxRunTable = []struct{
-	values []Interface
+var TestMaxRunTable = []struct {
+	values   []Interface
 	expected base.Value
 }{
 	{
-		values: []Interface{Literal{10.0}, Literal{5.0}, Literal{20.0}},
+		values:   []Interface{Literal{10.0}, Literal{5.0}, Literal{20.0}},
 		expected: 20.0,
 	},
 }
