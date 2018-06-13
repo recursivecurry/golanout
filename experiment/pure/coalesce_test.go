@@ -14,12 +14,12 @@ func TestCoalesce_Name(t *testing.T) {
 	}
 }
 
-var TestCoalesceRunTable = []struct{
-	values []Interface
+var TestCoalesceRunTable = []struct {
+	values   []Interface
 	expected base.Value
 }{
 	{
-		values: []Interface{Literal{nil}, Literal{5.0}, Literal{20.0}},
+		values:   []Interface{Literal{nil}, Literal{5.0}, Literal{20.0}},
 		expected: 5.0,
 	},
 }
