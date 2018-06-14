@@ -13,7 +13,7 @@ func TestMin_Name(t *testing.T) {
 	}
 }
 
-var TestMinRunTable = []struct {
+var TestMinValueTable = []struct {
 	values   []Interface
 	expected base.Value
 }{
@@ -23,8 +23,8 @@ var TestMinRunTable = []struct {
 	},
 }
 
-func TestMin_Run(t *testing.T) {
-	for _, test := range TestMinRunTable {
+func TestMin_Value(t *testing.T) {
+	for _, test := range TestMinValueTable {
 		min := Min{test.values}
 		actual, err := min.Value(nil, nil, "")
 		if err != nil {

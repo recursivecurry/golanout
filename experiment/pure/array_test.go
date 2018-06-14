@@ -15,7 +15,7 @@ func TestArray_Name(t *testing.T) {
 	}
 }
 
-var TestArrayRunTable = []struct {
+var TestArrayValueTable = []struct {
 	values   []Interface
 	expected interface{}
 }{
@@ -25,8 +25,8 @@ var TestArrayRunTable = []struct {
 	},
 }
 
-func TestArray_Run(t *testing.T) {
-	for _, test := range TestArrayRunTable {
+func TestArray_Value(t *testing.T) {
+	for _, test := range TestArrayValueTable {
 		array := Array{test.values}
 		actual, err := array.Value(nil, nil, "")
 		if err != nil {
