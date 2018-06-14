@@ -14,14 +14,14 @@ func TestLiteral_Name(t *testing.T) {
 	}
 }
 
-var TestLiteralRunTable = []base.Value{
+var TestLiteralValueTable = []base.Value{
 	1,
 	true,
 	"haha",
 }
 
-func TestLiteral_Run(t *testing.T) {
-	for _, test := range TestLiteralRunTable {
+func TestLiteral_Value(t *testing.T) {
+	for _, test := range TestLiteralValueTable {
 		literal := Literal{test}
 		actual, err := literal.Value(nil, nil, "")
 		if err != nil {

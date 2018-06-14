@@ -10,7 +10,7 @@ func TestAnd_Name(t *testing.T) {
 	}
 }
 
-var TestAndRunTable = []struct {
+var TestAndValueTable = []struct {
 	left     bool
 	right    bool
 	expected bool
@@ -21,8 +21,8 @@ var TestAndRunTable = []struct {
 	{false, false, false},
 }
 
-func TestAnd_Run(t *testing.T) {
-	for _, test := range TestAndRunTable {
+func TestAnd_Value(t *testing.T) {
+	for _, test := range TestAndValueTable {
 		and := And{[2]Interface{Literal{test.left}, Literal{test.right}}}
 		actual, err := and.Value(nil, nil, "")
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {

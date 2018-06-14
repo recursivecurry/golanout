@@ -14,7 +14,7 @@ func TestMax_Name(t *testing.T) {
 	}
 }
 
-var TestMaxRunTable = []struct {
+var TestMaxValueTable = []struct {
 	values   []Interface
 	expected base.Value
 }{
@@ -24,8 +24,8 @@ var TestMaxRunTable = []struct {
 	},
 }
 
-func TestMax_Run(t *testing.T) {
-	for _, test := range TestMaxRunTable {
+func TestMax_Value(t *testing.T) {
+	for _, test := range TestMaxValueTable {
 		max := Max{test.values}
 		actual, err := max.Value(nil, nil, "")
 		if err != nil {

@@ -14,7 +14,7 @@ func TestCoalesce_Name(t *testing.T) {
 	}
 }
 
-var TestCoalesceRunTable = []struct {
+var TestCoalesceValueTable = []struct {
 	values   []Interface
 	expected base.Value
 }{
@@ -24,8 +24,8 @@ var TestCoalesceRunTable = []struct {
 	},
 }
 
-func TestCoalesce_Run(t *testing.T) {
-	for _, test := range TestCoalesceRunTable {
+func TestCoalesce_Value(t *testing.T) {
+	for _, test := range TestCoalesceValueTable {
 		coalesce := Coalesce{test.values}
 		actual, err := coalesce.Value(nil, nil, "")
 		if err != nil {
