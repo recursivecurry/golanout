@@ -8,7 +8,7 @@ type Product struct {
 	values [2]Interface
 }
 
-func (p Product) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (p Product) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
 	n1, err := GetNumber(p.values[0], inputs, params, salt)
 	if err != nil {
 		return nil, err

@@ -7,9 +7,9 @@ import (
 )
 
 func TestMax_Name(t *testing.T) {
-	and := Max{}
+	max := Max{}
 
-	if and.Name() != "max" {
+	if max.Name() != "max" {
 		t.Fail()
 	}
 }

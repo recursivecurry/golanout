@@ -8,9 +8,9 @@ import (
 )
 
 func TestArray_Name(t *testing.T) {
-	and := Array{}
+	array := Array{}
 
-	if and.Name() != "array" {
+	if array.Name() != "array" {
 		t.Fail()
 	}
 }

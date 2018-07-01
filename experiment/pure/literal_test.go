@@ -7,9 +7,9 @@ import (
 )
 
 func TestLiteral_Name(t *testing.T) {
-	and := Literal{}
+	literal := Literal{}
 
-	if and.Name() != "literal" {
+	if literal.Name() != "literal" {
 		t.Fail()
 	}
 }

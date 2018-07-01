@@ -8,7 +8,7 @@ type Sum struct {
 	values [2]Interface
 }
 
-func (s Sum) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (s Sum) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
 	n1, err := GetNumber(s.values[0], inputs, params, salt)
 	if err != nil {
 		return nil, err
