@@ -7,9 +7,9 @@ import (
 )
 
 func TestCoalesce_Name(t *testing.T) {
-	and := Coalesce{}
+	coalesce := Coalesce{}
 
-	if and.Name() != "coalesce" {
+	if coalesce.Name() != "coalesce" {
 		t.Fail()
 	}
 }
