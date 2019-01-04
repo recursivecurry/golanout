@@ -5,5 +5,5 @@ import (
 )
 
 type Experiment interface {
-	Run(base.Inputs) base.Params
+	Run(base.Inputs, base.Overrides) (base.Params, error)
 }
