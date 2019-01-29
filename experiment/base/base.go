@@ -5,7 +5,11 @@ type Operator string
 type Value interface{}
 type Variables map[string]interface{}
 
-const VarVersion = "result"
+const (
+	VarVersion = "result"
+	VarFullSalt = "full_salt"
+	VarSalt = "salt"
+)
 
 func (v Variables) Result() string {
 	if r, ok := v[VarVersion].(string); ok {
