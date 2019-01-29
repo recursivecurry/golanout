@@ -14,17 +14,17 @@ type IfThen struct {
 	Then Interface
 }
 
-func (c Cond) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Params, error) {
+func (c Cond) Execute(ctx *base.Context) error {
 	for _, ifThen := range c.cond {
-		b, err := expression.GetBool(ifThen.If, inputs, params, salt)
+		b, err := expression.GetBool(ctx, ifThen.If)
 		if err != nil {
-			return params, err
+			return err
 		}
 		if b {
-			return ifThen.Then.Run(inputs, params, salt)
+			return ifThen.Then.Execute(ctx)
 		}
 	}
-	return params, nil
+	return nil
 }
 
 func (Cond) Name() base.Operator {

@@ -9,12 +9,12 @@ import (
 type Interface interface {
 	base.Interface
 	// Value return the pure value based on inputs, params and salt.
-	Value(base.Inputs, base.Params, base.Salt) (base.Value, error)
+	Value(*base.Context) (base.Value, error)
 }
 
 // GetBool return a bool value from a pure.Interface value.
-func GetBool(value Interface, inputs base.Inputs, params base.Params, salt base.Salt) (bool, error) {
-	v, err := value.Value(inputs, params, salt)
+func GetBool(env *base.Context, value Interface) (bool, error) {
+	v, err := value.Value(env)
 	if err != nil {
 		return false, err
 	}
@@ -29,8 +29,8 @@ func GetBool(value Interface, inputs base.Inputs, params base.Params, salt base.
 }
 
 // GetNumber return a number value from a pure.Interface value.
-func GetNumber(value Interface, inputs base.Inputs, params base.Params, salt base.Salt) (float64, error) {
-	v, err := value.Value(inputs, params, salt)
+func GetNumber(env *base.Context, value Interface) (float64, error) {
+	v, err := value.Value(env)
 	if err != nil {
 		return 0, err
 	}

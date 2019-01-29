@@ -8,12 +8,12 @@ type And struct {
 	values [2]Interface
 }
 
-func (a And) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	b1, err := GetBool(a.values[0], inputs, params, salt)
+func (a And) Value(ctx *base.Context) (base.Value, error) {
+	b1, err := GetBool(ctx, a.values[0])
 	if err != nil {
 		return nil, err
 	}
-	b2, err := GetBool(a.values[1], inputs, params, salt)
+	b2, err := GetBool(ctx, a.values[1])
 	if err != nil {
 		return nil, err
 	}

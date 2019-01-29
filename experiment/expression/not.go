@@ -8,8 +8,8 @@ type Not struct {
 	value Interface
 }
 
-func (n Not) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	b, err := GetBool(n.value, inputs, params, salt)
+func (n Not) Value(ctx *base.Context) (base.Value, error) {
+	b, err := GetBool(ctx, n.value)
 	if err != nil {
 		return nil, err
 	}

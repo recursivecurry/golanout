@@ -27,7 +27,7 @@ var TestCoalesceValueTable = []struct {
 func TestCoalesce_Value(t *testing.T) {
 	for _, test := range TestCoalesceValueTable {
 		coalesce := Coalesce{test.values}
-		actual, err := coalesce.Value(nil, nil, "")
+		actual, err := coalesce.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

@@ -9,13 +9,13 @@ type Max struct {
 	values []Interface
 }
 
-func (m Max) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (m Max) Value(ctx *base.Context) (base.Value, error) {
 
 	if len(m.values) == 0 {
 		return nil, errors.New("no values")
 	}
 	var max float64
-	value, err := m.values[0].Value(inputs, params, salt)
+	value, err := m.values[0].Value(ctx)
 	if err != nil {
 		return nil, err
 	}
@@ -23,7 +23,7 @@ func (m Max) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base
 		max = fv
 	}
 	for _, v := range m.values[1:] {
-		value, err := v.Value(inputs, params, salt)
+		value, err := v.Value(ctx)
 		if err != nil {
 			return nil, err
 		}

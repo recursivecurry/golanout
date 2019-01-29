@@ -34,7 +34,7 @@ var TestSumValueTable = []struct {
 func TestSum_Value(t *testing.T) {
 	for _, test := range TestSumValueTable {
 		sum := Sum{test.values}
-		actual, err := sum.Value(nil, nil, "")
+		actual, err := sum.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

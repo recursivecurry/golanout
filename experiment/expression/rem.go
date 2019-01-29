@@ -9,12 +9,12 @@ type Rem struct {
 	values [2]Interface
 }
 
-func (r Rem) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	n1, err := GetNumber(r.values[0], inputs, params, salt)
+func (r Rem) Value(ctx *base.Context) (base.Value, error) {
+	n1, err := GetNumber(ctx, r.values[0])
 	if err != nil {
 		return nil, err
 	}
-	n2, err := GetNumber(r.values[1], inputs, params, salt)
+	n2, err := GetNumber(ctx, r.values[1])
 	if err != nil {
 		return nil, err
 	}

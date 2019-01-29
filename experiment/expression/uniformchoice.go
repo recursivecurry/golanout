@@ -13,6 +13,6 @@ func (UniformChoice) Name() base.Operator {
 	return "uniformChoice"
 }
 
-func (UniformChoice) Value(inputs base.Inputs, params base.Params, salt base.Salt) base.Value {
+func (UniformChoice) Value(ctx *base.Context) (base.Value, error) {
 	panic("implement me")
 }

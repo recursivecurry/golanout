@@ -10,14 +10,14 @@ type Coalesce struct {
 	values []Interface
 }
 
-func (m Coalesce) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
+func (c Coalesce) Value(ctx *base.Context) (base.Value, error) {
 
-	if len(m.values) == 0 {
+	if len(c.values) == 0 {
 		return nil, errors.New("no values")
 	}
 
-	for _, v := range m.values {
-		value, err := v.Value(inputs, params, salt)
+	for _, v := range c.values {
+		value, err := v.Value(ctx)
 		if err != nil {
 			return nil, err
 		}

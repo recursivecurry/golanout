@@ -9,12 +9,12 @@ type Quot struct {
 	values [2]Interface
 }
 
-func (q Quot) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	n1, err := GetNumber(q.values[0], inputs, params, salt)
+func (q Quot) Value(ctx *base.Context) (base.Value, error) {
+	n1, err := GetNumber(ctx, q.values[0])
 	if err != nil {
 		return nil, err
 	}
-	n2, err := GetNumber(q.values[1], inputs, params, salt)
+	n2, err := GetNumber(ctx, q.values[1])
 	if err != nil {
 		return nil, err
 	}

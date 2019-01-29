@@ -26,7 +26,7 @@ var TestMinValueTable = []struct {
 func TestMin_Value(t *testing.T) {
 	for _, test := range TestMinValueTable {
 		min := Min{test.values}
-		actual, err := min.Value(nil, nil, "")
+		actual, err := min.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

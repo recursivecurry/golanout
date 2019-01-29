@@ -27,7 +27,7 @@ var TestMaxValueTable = []struct {
 func TestMax_Value(t *testing.T) {
 	for _, test := range TestMaxValueTable {
 		max := Max{test.values}
-		actual, err := max.Value(nil, nil, "")
+		actual, err := max.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

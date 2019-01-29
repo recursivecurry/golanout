@@ -1,6 +1,9 @@
 package expression
 
-import "testing"
+import (
+	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
+)
 
 func TestOr_Name(t *testing.T) {
 	or := Or{}
@@ -24,7 +27,7 @@ var TestOrValueTable = []struct {
 func TestOr_Value(t *testing.T) {
 	for _, test := range TestOrValueTable {
 		or := Or{[2]Interface{Literal{test.left}, Literal{test.right}}}
-		actual, err := or.Value(nil, nil, "")
+		actual, err := or.Value(&base.Context{})
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {
 			t.Fail()
 		}

@@ -8,8 +8,8 @@ type Negative struct {
 	value Interface
 }
 
-func (n Negative) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	number, err := GetNumber(n.value, inputs, params, salt)
+func (n Negative) Value(ctx *base.Context) (base.Value, error) {
+	number, err := GetNumber(ctx, n.value)
 	if err != nil {
 		return nil, err
 	}

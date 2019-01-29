@@ -1,6 +1,9 @@
 package expression
 
-import "testing"
+import (
+	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
+)
 
 func TestNegative_Name(t *testing.T) {
 	negative := Negative{}
@@ -22,7 +25,7 @@ var TestNegativeValueTable = []struct {
 func TestNegative_Value(t *testing.T) {
 	for _, test := range TestNegativeValueTable {
 		negative := Negative{Literal{test.value}}
-		actual, err := negative.Value(nil, nil, "")
+		actual, err := negative.Value(&base.Context{})
 		if v, ok := actual.(float64); !ok || err != nil || v != test.expected {
 			t.Fail()
 		}

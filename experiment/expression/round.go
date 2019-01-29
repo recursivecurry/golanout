@@ -9,8 +9,8 @@ type Round struct {
 	value Interface
 }
 
-func (r Round) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	number, err := GetNumber(r.value, inputs, params, salt)
+func (r Round) Value(ctx *base.Context) (base.Value, error) {
+	number, err := GetNumber(ctx, r.value)
 	if err != nil {
 		return nil, err
 	}

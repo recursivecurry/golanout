@@ -1,6 +1,9 @@
 package expression
 
-import "testing"
+import (
+	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
+)
 
 func TestAnd_Name(t *testing.T) {
 	and := And{}
@@ -24,7 +27,7 @@ var TestAndValueTable = []struct {
 func TestAnd_Value(t *testing.T) {
 	for _, test := range TestAndValueTable {
 		and := And{[2]Interface{Literal{test.left}, Literal{test.right}}}
-		actual, err := and.Value(nil, nil, "")
+		actual, err := and.Value(&base.Context{})
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {
 			t.Fail()
 		}
@@ -33,7 +36,7 @@ func TestAnd_Value(t *testing.T) {
 
 func TestAnd_WrongValue(t *testing.T) {
 	and := And{[2]Interface{Literal{true}, Literal{1}}}
-	_, err := and.Value(nil, nil, "")
+	_, err := and.Value(&base.Context{})
 	if err == nil {
 		t.Fail()
 	}

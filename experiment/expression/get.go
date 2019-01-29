@@ -9,12 +9,8 @@ type Get struct {
 	Variable string
 }
 
-func (g Get) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	if v, ok := inputs[g.Variable]; ok {
-		return v, nil
-	}
-
-	if v, ok := params[g.Variable]; ok {
+func (g Get) Value(ctx *base.Context) (base.Value, error) {
+	if v, ok := ctx.Variables[g.Variable]; ok {
 		return v, nil
 	}
 

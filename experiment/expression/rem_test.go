@@ -31,7 +31,7 @@ var TestRemValueTable = []struct {
 func TestRem_Value(t *testing.T) {
 	for _, test := range TestRemValueTable {
 		rem := Rem{test.values}
-		actual, err := rem.Value(nil, nil, "")
+		actual, err := rem.Value(&base.Context{})
 		if err != nil {
 			if err.Error() != test.err.Error() {
 				t.Error(err)

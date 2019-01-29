@@ -36,7 +36,7 @@ var TestQuotValueTable = []struct {
 func TestQuot_Value(t *testing.T) {
 	for _, test := range TestQuotValueTable {
 		quot := Quot{test.values}
-		actual, err := quot.Value(nil, nil, "")
+		actual, err := quot.Value(&base.Context{})
 		if err != nil {
 			if err.Error() != test.err.Error() {
 				t.Error(err)

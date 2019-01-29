@@ -28,7 +28,7 @@ var TestArrayValueTable = []struct {
 func TestArray_Value(t *testing.T) {
 	for _, test := range TestArrayValueTable {
 		array := Array{test.values}
-		actual, err := array.Value(nil, nil, "")
+		actual, err := array.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

@@ -1,6 +1,9 @@
 package expression
 
-import "testing"
+import (
+	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
+)
 
 func TestGet_Name(t *testing.T) {
 	get := Get{}
@@ -12,9 +15,10 @@ func TestGet_Name(t *testing.T) {
 
 func TestGet_Value(t *testing.T) {
 	get := Get{"b"}
-	inputs := map[string]interface{}{"a": true, "b": 1.0}
-	params := map[string]interface{}{"b": false, "c": 2}
-	v, err := get.Value(inputs, params, "")
+	ctx := &base.Context{
+		Variables: map[string]interface{}{"a": true, "b": 1.0, "c": 2},
+	}
+	v, err := get.Value(ctx)
 	if err != nil {
 		t.Fail()
 	}
@@ -25,9 +29,10 @@ func TestGet_Value(t *testing.T) {
 	if n != 1 {
 		t.Fail()
 	}
-	inputs = map[string]interface{}{"a": true}
-	params = map[string]interface{}{"b": false, "c": 2}
-	v2, err := get.Value(inputs, params, "")
+	ctx = &base.Context{
+		Variables: map[string]interface{}{"a": true, "b": false, "c": 2},
+	}
+	v2, err := get.Value(ctx)
 	if err != nil {
 		t.Fail()
 	}

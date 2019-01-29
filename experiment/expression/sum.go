@@ -8,12 +8,12 @@ type Sum struct {
 	values [2]Interface
 }
 
-func (s Sum) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	n1, err := GetNumber(s.values[0], inputs, params, salt)
+func (s Sum) Value(ctx *base.Context) (base.Value, error) {
+	n1, err := GetNumber(ctx, s.values[0])
 	if err != nil {
 		return nil, err
 	}
-	n2, err := GetNumber(s.values[1], inputs, params, salt)
+	n2, err := GetNumber(ctx, s.values[1])
 	if err != nil {
 		return nil, err
 	}

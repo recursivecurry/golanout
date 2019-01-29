@@ -8,12 +8,12 @@ type Or struct {
 	values [2]Interface
 }
 
-func (o Or) Value(inputs base.Inputs, params base.Params, salt base.Salt) (base.Value, error) {
-	b1, err := GetBool(o.values[0], inputs, params, salt)
+func (o Or) Value(ctx *base.Context) (base.Value, error) {
+	b1, err := GetBool(ctx, o.values[0])
 	if err != nil {
 		return nil, err
 	}
-	b2, err := GetBool(o.values[1], inputs, params, salt)
+	b2, err := GetBool(ctx, o.values[1])
 	if err != nil {
 		return nil, err
 	}

@@ -23,7 +23,7 @@ var TestLiteralValueTable = []base.Value{
 func TestLiteral_Value(t *testing.T) {
 	for _, test := range TestLiteralValueTable {
 		literal := Literal{test}
-		actual, err := literal.Value(nil, nil, "")
+		actual, err := literal.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

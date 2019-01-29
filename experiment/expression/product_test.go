@@ -34,7 +34,7 @@ var TestProductValueTable = []struct {
 func TestProduct_Value(t *testing.T) {
 	for _, test := range TestProductValueTable {
 		product := Product{test.values}
-		actual, err := product.Value(nil, nil, "")
+		actual, err := product.Value(&base.Context{})
 		if err != nil {
 			t.Error(err)
 		}

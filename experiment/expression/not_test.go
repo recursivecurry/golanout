@@ -1,6 +1,9 @@
 package expression
 
-import "testing"
+import (
+	"github.com/recursivecurry/golanout/experiment/base"
+	"testing"
+)
 
 func TestNot_Name(t *testing.T) {
 	not := Not{}
@@ -21,7 +24,7 @@ var TestNotBoolValueTable = []struct {
 func TestNotBool_Value(t *testing.T) {
 	for _, test := range TestNotBoolValueTable {
 		not := Not{Literal{test.value}}
-		actual, err := not.Value(nil, nil, "")
+		actual, err := not.Value(&base.Context{})
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {
 			t.Fail()
 		}
@@ -39,7 +42,7 @@ var TestNotNumberValueTable = []struct {
 func TestNot_Value(t *testing.T) {
 	for _, test := range TestNotNumberValueTable {
 		not := Not{Literal{test.value}}
-		actual, err := not.Value(nil, nil, "")
+		actual, err := not.Value(&base.Context{})
 		if v, ok := actual.(bool); !ok || err != nil || v != test.expected {
 			t.Fail()
 		}

@@ -10,13 +10,13 @@ type Set struct {
 	value    expression.Interface
 }
 
-func (s Set) Run(inputs base.Inputs, params base.Params, salt base.Salt) (base.Params, error) {
-	v, err := s.value.Value(inputs, params, salt)
+func (s Set) Execute(env *base.Context) error {
+	v, err := s.value.Value(env)
 	if err != nil {
-		return params, err
+		return err
 	}
-	params[s.variable] = v
-	return params, nil
+	env.Variables[s.variable] = v
+	return nil
 }
 
 func (Set) Name() base.Operator {
