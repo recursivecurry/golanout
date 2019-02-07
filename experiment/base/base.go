@@ -6,9 +6,9 @@ type Value interface{}
 type Variables map[string]interface{}
 
 const (
-	VarVersion = "result"
+	VarVersion  = "result"
 	VarFullSalt = "full_salt"
-	VarSalt = "salt"
+	VarSalt     = "salt"
 )
 
 func (v Variables) Result() string {
@@ -18,12 +18,11 @@ func (v Variables) Result() string {
 	return ""
 }
 
-
 // Context is an experiment execution environment.
 type Context struct {
 	Variables Variables
-	Salt string
-	NoLog bool
+	Salt      string
+	NoLog     bool
 }
 
 // A type that satisfies the base.Interface can be a PlanOut operator

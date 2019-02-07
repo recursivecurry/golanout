@@ -13,5 +13,5 @@ func (RandomInteger) Name() base.Operator {
 }
 
 func (r *RandomInteger) Value(ctx *base.Context) (base.Value, error) {
-	return Literal{r.Min + r.getHash() % (r.Max - r.Min + 1)}, nil
+	return Literal{r.Min + r.getHash()%(r.Max-r.Min+1)}, nil
 }

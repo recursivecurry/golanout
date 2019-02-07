@@ -1,8 +1,9 @@
 package expression
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
 	"testing"
+
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 func TestNegative_Name(t *testing.T) {

@@ -3,16 +3,17 @@ package expression
 import (
 	"crypto/sha1"
 	"fmt"
-	"github.com/recursivecurry/golanout/experiment/base"
 	"strconv"
 	"strings"
+
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 const LongScale = float64(0xFFFFFFFFFFFFFFF)
 
 type Random struct {
 	Unit []base.Value
-	Ctx *base.Context
+	Ctx  *base.Context
 }
 
 func (r Random) getUnit(appendedUnit ...base.Value) []string {
@@ -45,5 +46,5 @@ func (r Random) getHash(appendedUnit ...base.Value) int {
 
 func (r Random) getUniform(minValue, MaxValue float64, appendedUnit ...base.Value) float64 {
 	zeroToOne := float64(r.getHash(appendedUnit...)) / LongScale
-	return minValue + (MaxValue - minValue) * zeroToOne
+	return minValue + (MaxValue-minValue)*zeroToOne
 }

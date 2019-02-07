@@ -2,8 +2,9 @@ package expression
 
 import (
 	"errors"
-	"github.com/recursivecurry/golanout/experiment/base"
 	"testing"
+
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 func TestQuot_Name(t *testing.T) {

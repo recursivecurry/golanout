@@ -1,9 +1,10 @@
 package expression
 
 import (
+	"reflect"
+
 	"github.com/pkg/errors"
 	"github.com/recursivecurry/golanout/experiment/base"
-	"reflect"
 )
 
 type Length struct {

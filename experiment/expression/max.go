@@ -2,6 +2,7 @@ package expression
 
 import (
 	"errors"
+
 	"github.com/recursivecurry/golanout/experiment/base"
 )
 

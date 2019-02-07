@@ -1,8 +1,9 @@
 package expression
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
 	"testing"
+
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 func TestLength_Name(t *testing.T) {
@@ -14,19 +15,19 @@ func TestLength_Name(t *testing.T) {
 }
 
 var TestLengthValueTable = []struct {
-	value   Interface
+	value    Interface
 	expected int
 }{
 	{
-		value: Array{values: []Interface{Literal{1}, Literal{"a"}, Literal{3.14}}},
+		value:    Array{values: []Interface{Literal{1}, Literal{"a"}, Literal{3.14}}},
 		expected: 3,
 	},
 	{
-		value: Literal{value: map[string]interface{}{"a": 1, "b": 2}},
+		value:    Literal{value: map[string]interface{}{"a": 1, "b": 2}},
 		expected: 2,
 	},
 	{
-		value: Literal{value: "abcd"},
+		value:    Literal{value: "abcd"},
 		expected: 4,
 	},
 }

@@ -1,8 +1,9 @@
 package expression
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
 	"math"
+
+	"github.com/recursivecurry/golanout/experiment/base"
 )
 
 type Rem struct {
