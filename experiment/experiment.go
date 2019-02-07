@@ -1,9 +1,9 @@
 package experiment
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
-	"github.com/recursivecurry/golanout/experiment/interpreter"
-	"github.com/recursivecurry/golanout/experiment/statement"
+	"github.com/recursivecurry/golanout/base"
+	"github.com/recursivecurry/golanout/interpreter"
+	"github.com/recursivecurry/golanout/statement"
 )
 
 type Experiment struct {
