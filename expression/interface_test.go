@@ -1,14 +1,15 @@
 package expression
 
 import (
-	"github.com/recursivecurry/golanout/base"
 	"strings"
 	"testing"
+
+	"github.com/recursivecurry/golanout/base"
 )
 
 func TestGetBool(t *testing.T) {
-	var testData = []struct{
-		input Interface
+	var testData = []struct {
+		input    Interface
 		expected bool
 	}{
 		{
@@ -36,8 +37,8 @@ func TestGetBool(t *testing.T) {
 }
 
 func TestGetNumber(t *testing.T) {
-	var testData = []struct{
-		input Interface
+	var testData = []struct {
+		input    Interface
 		expected base.Number
 	}{
 		{
@@ -61,10 +62,10 @@ func TestGetNumber(t *testing.T) {
 }
 
 func TestGetInt(t *testing.T) {
-	var testData = []struct{
-		input Interface
+	var testData = []struct {
+		input    Interface
 		expected int
-		err string
+		err      string
 	}{
 		{
 			Literal{base.Number(3.14)},

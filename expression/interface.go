@@ -2,6 +2,7 @@ package expression
 
 import (
 	"fmt"
+
 	"github.com/pkg/errors"
 	"github.com/recursivecurry/golanout/base"
 )
