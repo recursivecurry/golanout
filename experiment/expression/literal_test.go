@@ -1,6 +1,7 @@
 package expression
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/recursivecurry/golanout/experiment/base"
@@ -16,8 +17,10 @@ func TestLiteral_Name(t *testing.T) {
 
 var TestLiteralValueTable = []base.Value{
 	1,
+	3.14,
 	true,
 	"haha",
+	map[string]interface{}{"abc": 1, "def": "world"},
 }
 
 func TestLiteral_Value(t *testing.T) {
@@ -27,7 +30,7 @@ func TestLiteral_Value(t *testing.T) {
 		if err != nil {
 			t.Error(err)
 		}
-		if test != actual {
+		if !reflect.DeepEqual(test, actual) {
 			t.Error(test, actual)
 		}
 	}
