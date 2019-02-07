@@ -1,16 +1,17 @@
 package experiment
 
 import (
-	"github.com/recursivecurry/golanout/experiment/base"
-	"github.com/recursivecurry/golanout/experiment/interpreter"
-	"github.com/recursivecurry/golanout/experiment/statement"
+	"github.com/recursivecurry/golanout/base"
+	"github.com/recursivecurry/golanout/interpreter"
+	"github.com/recursivecurry/golanout/statement"
 )
 
 type Experiment struct {
-	Name      string
-	Code      statement.Interface
-	salt      string
+	Name string
+	Code statement.Interface
+	salt string
 }
+
 func (e *Experiment) Execute(inputs map[string]interface{}, overrides map[string]interface{}) (base.Variables, error) {
 	variables := make(base.Variables)
 	for k, v := range inputs {
@@ -21,7 +22,7 @@ func (e *Experiment) Execute(inputs map[string]interface{}, overrides map[string
 	}
 	env := &base.Context{
 		Variables: variables,
-		Salt: e.salt,
+		Salt:      e.salt,
 	}
 	err := e.Code.Execute(env)
 	if err != nil {
